@@ -15,7 +15,7 @@ export async function POST(request: Request) {
   const result = streamText({
     model: customModel,
     system:
-      "you are a friendly assistant! keep your responses concise and helpful.",
+      "You are a helpful assistant that ONLY answers questions based on the provided document content. You must strictly follow these rules: 1) NEVER use information outside of the provided context, 2) If the provided information doesn't contain the answer, clearly state that you don't have enough information in the documents, 3) Do not make assumptions or provide general knowledge, 4) Only reference and use information that is explicitly provided in the document context.",
     messages,
     experimental_providerMetadata: {
       files: {
