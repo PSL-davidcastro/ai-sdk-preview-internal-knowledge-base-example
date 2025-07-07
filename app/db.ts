@@ -84,3 +84,7 @@ export async function deleteChunksByFilePath({
 }) {
   return await db.delete(chunk).where(eq(chunk.filePath, filePath));
 }
+
+export async function deleteChatById({ id }: { id: string }) {
+  return await db.delete(chat).where(eq(chat.id, id));
+}
